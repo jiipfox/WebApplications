@@ -1,10 +1,27 @@
-import "./styles.css";
+if (document.readyState !== "loading") {
+  console.log("Document ready");
+  initializeCode();
+} else {
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("Document ready after waiting?");
+  });
+}
 
-document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
-<div>
-  We use the same configuration as Parcel to bundle this sandbox, you can find more
-  info about Parcel 
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-</div>
-`;
+function initializeCode() {
+  const addCommentButton = document.getElementById("add-comment");
+  const removeCommentButton = document.getElementById("remove-comment");
+
+  addCommentButton.addEventListener("click", function () {
+    const text = document.getElementById("text-area").value;
+    const ul = document.getElementById("comments");
+    const li = document.createElement("li");
+    li.appendChild(document.createTextNode(text));
+    ul.appendChild(li);
+    console.log("Working");
+  });
+  removeCommentButton.addEventListener("click", function () {
+    const ul = document.getElementById("comments");
+    ul.removeChild(ul.lastChild);
+    console.log("Remove comment");
+  });
+}
