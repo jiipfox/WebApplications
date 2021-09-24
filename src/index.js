@@ -15,8 +15,19 @@ function initializeCode() {
     const text = document.getElementById("text-area").value;
     const ul = document.getElementById("comments");
     const li = document.createElement("li");
-    li.appendChild(document.createTextNode(text));
+    const rating = document.getElementById("rating").value;
+    console.log(rating);
+
+    //li.appendChild(document.createTextNode(text));
+    //ul.appendChild(li);
+
+    const newDiv = document.createElement("div");
+    newDiv.appendChild(document.createTextNode(text));
+    newDiv.appendChild(document.createTextNode(rating));
+
+    li.appendChild(newDiv);
     ul.appendChild(li);
+
     console.log("Working");
   });
   removeCommentButton.addEventListener("click", function () {
