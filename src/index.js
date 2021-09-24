@@ -28,7 +28,7 @@ function initializeCode() {
     li.appendChild(newDiv);
     ul.appendChild(li);
 
-    console.log("Working");
+    console.log(text);
   });
   removeCommentButton.addEventListener("click", function () {
     const ul = document.getElementById("comments");
