@@ -22,8 +22,8 @@ function initializeCode() {
     //ul.appendChild(li);
 
     const newDiv = document.createElement("div");
-    newDiv.appendChild(document.createTextNode(text));
     newDiv.appendChild(document.createTextNode(rating));
+    newDiv.appendChild(document.createTextNode(text));
 
     li.appendChild(newDiv);
     ul.appendChild(li);
